@@ -103,4 +103,27 @@ public class HomeScreenActivity extends AppCompatActivity {
         mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
     }
 
+    public void openLoLScheduler(View view){
+        Intent intent = new Intent(this,lolScheduler.class);
+        startActivity(intent);
+
+
+    }
+
+    public void openDotaScheduler(View view){
+        Intent intent = new Intent(this,Dota2Scheduler.class);
+        startActivity(intent);
+
+    }
+
+    public void openHsScheduler(View view){
+        Intent intent = new Intent(this,HsScheduler.class);
+        startActivity(intent);
+    }
+
+    public void openHotsScheduler(View view){
+        Intent intent = new Intent(this,HotsScheduler.class);
+        startActivity(intent);
+    }
+
 }

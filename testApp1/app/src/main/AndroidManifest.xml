@@ -23,6 +23,23 @@
             android:name="test.eSportsApp.Settings"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name="test.eSportsApp.lolScheduler"
+            android:label="@string/lolScheduler_page_tilte"
+
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="test.eSportsApp.Dota2Scheduler"
+            android:label="@string/dotaScheduler_page_tilte"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="test.eSportsApp.HsScheduler"
+            android:label="@string/hsScheduler_page_tilte"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="test.eSportsApp.HotsScheduler"
+            android:label="@string/hotsScheduler_page_tilte"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

@@ -7,4 +7,29 @@
     <string name="title_activity_settings">Settings</string>
     <string name="home_menu">Home</string>
     <string name="settings_page_title">Home Page Settings</string>
+    <string name="lolScheduler_page_tilte">LOL Game Schedule</string>
+    <string name="dotaScheduler_page_tilte">DOTA2 Game Schedule</string>
+    <string name="hsScheduler_page_tilte">Hearthstone Game Schedule </string>
+    <string name="hotsScheduler_page_tilte">Hero Of The Storm Game Schedule</string>
+    <string-array name="lolSchedule">
+        <item>2:00 PM TSM vs Team Impulse</item>
+        <item>3:00 PM Immortals vs NRG Esports</item>
+        <item>4:00 PM Counter Logic Gaming vs Liquid</item>
+    </string-array>
+    <string-array name="dotaSchedule">
+        <item>10:00 AM LGD Gaming vs Team Impulse</item>
+        <item>1:00  PM CDEC Gaming vs Cloud9</item>
+        <item>3:00  PM MVP Phoenixvs Newbee</item>
+    </string-array>
+    <string-array name="hsSchedule">
+        <item>4:00 PM Doky vs AKAWonder</item>
+        <item>6:00 PM SilverName vs AKAWonder</item>
+        <item>8:00 PM LuckyShadow vs Elscouta</item>
+    </string-array>
+    <string-array name="hotsSchedule">
+        <item>12:00 PM MVP Black vs Team No Limit</item>
+        <item>3:00 PM Team Rave vs Team Hero</item>
+        <item>4:00 PM Young Boss vs Team Redemption</item>
+    </string-array>
+
 </resources>
