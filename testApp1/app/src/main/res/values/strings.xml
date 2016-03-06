@@ -3,7 +3,8 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="hello">HELLO</string>
-    <string name="test_value">TEST</string>
     <string name="search">Search...</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="home_menu">Home</string>
+    <string name="settings_page_title">Home Page Settings</string>
 </resources>

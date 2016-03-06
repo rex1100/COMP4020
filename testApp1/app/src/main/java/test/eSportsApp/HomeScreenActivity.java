@@ -1,12 +1,14 @@
 package test.eSportsApp;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import test.testapp1.R;
@@ -77,13 +79,17 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_fullscreen);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, array);
+    //    ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_2, array);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
+     //   ListView listView = (ListView) findViewById(R.id.listView);
+      //  listView.setAdapter(adapter);
     }
 
-
+    public void openSettings(View view)
+    {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
 
     @SuppressLint("InlinedApi")
     private void show() {
