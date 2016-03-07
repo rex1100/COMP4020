@@ -11,6 +11,7 @@
     <string name="dotaScheduler_page_tilte">DOTA2 Game Schedule</string>
     <string name="hsScheduler_page_tilte">Hearthstone Game Schedule </string>
     <string name="hotsScheduler_page_tilte">Hero Of The Storm Game Schedule</string>
+    <string name="game_notification_page_title">Notification Settings</string>
     <string-array name="lolSchedule">
         <item>2:00 PM TSM vs Team Impulse</item>
         <item>3:00 PM Immortals vs NRG Esports</item>

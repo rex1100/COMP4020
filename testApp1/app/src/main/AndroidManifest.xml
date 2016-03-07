@@ -40,6 +40,10 @@
             android:name="test.eSportsApp.HotsScheduler"
             android:label="@string/hotsScheduler_page_tilte"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="test.eSportsApp.gameNotification"
+            android:label="@string/game_notification_page_title"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
