@@ -23,56 +23,104 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/settings_page_title"
         android:id="@+id/textView2"
+        android:background="#ffffff"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/spinner"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Game:"
-        android:id="@+id/textView3"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Category Options"
-        android:id="@+id/textView4"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@+id/spinner"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button3"
+        android:id="@+id/settingsSwitchLayout"
+        android:background="#b0c6e1"
+        android:weightSum="1"
+        android:visibility="visible">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Select which categories too display:"
-        android:id="@+id/textView5"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Stuff to Select in Here"
-        android:id="@+id/textView6"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="News"
+            android:id="@+id/LoLswitch1"
+            android:layout_weight="0.08"
+            android:visibility="gone"
+            android:layout_marginLeft="25dp"
+            android:checked="false" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="eSports"
+            android:id="@+id/LoLswitch2"
+            android:layout_weight="0.08"
+            android:visibility="gone"
+            android:layout_marginLeft="25dp" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Players"
+            android:id="@+id/LoLswitch3"
+            android:layout_weight="0.08"
+            android:visibility="gone"
+            android:layout_marginLeft="25dp" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Teams"
+            android:id="@+id/LoLswitch4"
+            android:layout_weight="0.08"
+            android:visibility="gone"
+            android:layout_marginLeft="25dp" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="News"
+            android:id="@+id/HSswitch1"
+            android:layout_weight="0.08"
+            android:visibility="gone" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Schedule"
+            android:id="@+id/HSswitch2"
+            android:layout_weight="0.08"
+            android:visibility="gone" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Players"
+            android:id="@+id/HSswitch3"
+            android:layout_weight="0.08"
+            android:visibility="gone" />
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DefaultSwitch"
+            android:id="@+id/Defaultswitch1"
+            android:layout_weight="0.08"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
 </RelativeLayout>
