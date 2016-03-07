@@ -5,92 +5,6 @@
     android:background="#ffffff"
     tools:context="test.eSportsApp.HomeScreenActivity">
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#fa7c06"
-        android:rowCount="2"
-        android:columnCount="4"
-        android:layout_gravity="center_vertical"
-        android:layout_below="@+id/searchView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:text="LoL"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:clickable="false"
-            android:onClick="openLoLScheduler" />
-
-        <Button
-            android:text="Dota2"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="openDotaScheduler" />
-
-        <Button
-            android:text="HS"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="openHsScheduler" />
-
-        <Button
-            android:text="HotS"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="openHotsScheduler" />
-
-        <Button
-            android:text="News"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp" />
-
-        <Button
-            android:text="Schedule"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:text="Players"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:text="Riot"
-            android:layout_row="1"
-            android:layout_column="3"
-            android:textSize="14dip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </GridLayout>
-
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,19 +17,6 @@
         android:layout_alignParentStart="true">
     </SearchView>
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/listView"
-        android:layout_centerHorizontal="true"
-        android:choiceMode="singleChoice"
-        tools:listitem="@android:layout/simple_list_item_2"
-        android:layout_below="@+id/gridLayout"
-        android:layout_above="@+id/button"
-        android:layout_alignParentStart="true"
-        android:clickable="false"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,27 +27,166 @@
         android:layout_alignParentEnd="true"
         android:onClick="openSettings" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/searchView"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/gameBarLayout"
+        android:gravity="center" >
 
-    <TextView
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LoL"
+            android:id="@+id/lolbut"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="openLolSubMenu" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HS"
+            android:id="@+id/hsbut"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="openHsSubMenu"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dota2"
+            android:id="@+id/dotabut"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HoTS"
+            android:id="@+id/hotsbut"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/listView"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/gameSubMenuLayout"
+        android:layout_below="@+id/gameBarLayout"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LolNews"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/lolbutton1"
+            android:onClick="openLoLNewsMenu"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LolSched"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/lolbutton2"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LoLPlayers"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/lolbutton3"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LolTeam"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/lolbutton4"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HSNews"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/hsbutton1"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HSSchedule"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/hsbutton2"
+            android:visibility="gone" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HSPlayers"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/hsbutton3"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/gameSubMenuLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/button"
+        android:id="@+id/textContentLayout">
+
+        <ListView
+            tools:listitem="@android:layout/simple_list_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lolNewsListView"
+            android:choiceMode="singleChoice"
+            android:clickable="false"
+            android:visibility="gone" />
+    </RelativeLayout>
+
 
 </RelativeLayout>
