@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,7 +28,18 @@ import test.testapp1.R;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class HomeScreenActivity extends AppCompatActivity {
+public class HomeScreenActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+    // a couple of booleans to determine where we are in the interface for list on click listener
+    boolean lolMenu = true;
+    boolean hearthstoneMenu = false;
+    boolean dotaMenu = false;
+    boolean hotsMenu = false;
+    boolean newsMenu = false;
+    boolean scheduleMenu = false;
+    boolean teamMenu = false;
+    boolean playerMenu = false;
+
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -84,6 +96,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      */
 
     String[] lolNewsArray = {"Patch 6.4 Notes","Wow SKT Sucks","IEM Katowice Update #3","CLG vs. QG Game 3","Feeder Noob","Now This is Pod Racing"};
+    String[] lolScheduleArray = {"2PM CST: REN vs. C9 ","3PM CST: IMT vs. NRG", "4PM CST: CLG vs. TL", "5PM CST: TSM vs. TIP", "6PM  CST: FOX vs. DIG"};
 
     int[] onSubMenus = new int[7];
 
@@ -99,6 +112,18 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ArrayAdapter<String> lolNewsListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolNewsList);
         lolNewsListView.setAdapter(lolNewsListAdapter);
+
+        ListView lolScheduleListView = (ListView) findViewById(R.id.lolScheduleListView);
+
+        List<String> lolScheduleList = new ArrayList<String>();
+        lolScheduleList.addAll(Arrays.asList(lolScheduleArray));
+
+        ArrayAdapter<String> lolScheduleListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolScheduleList);
+        lolScheduleListView.setAdapter(lolScheduleListAdapter);
+
+        // need to add these list view things to all of the list views
+        lolScheduleListView.setOnItemClickListener(this);
+        lolNewsListView.setOnItemClickListener(this);
 
         String isEnabled;
         Intent intent=getIntent();
@@ -227,6 +252,10 @@ public class HomeScreenActivity extends AppCompatActivity {
                 buttonSwitch.setVisibility(View.GONE);
             }
         }
+        lolMenu = true;
+        hearthstoneMenu = false;
+        dotaMenu = false;
+        hotsMenu = false;
     }
 
     public void openHsSubMenu(View view)
@@ -247,6 +276,10 @@ public class HomeScreenActivity extends AppCompatActivity {
                 buttonSwitch.setVisibility(View.GONE);
             }
         }
+        lolMenu = false;
+        hearthstoneMenu = true;
+        dotaMenu = false;
+        hotsMenu = false;
     }
 
     public void openLoLNewsMenu(View view)
@@ -264,6 +297,31 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ListView lolNewsListView = (ListView) findViewById(R.id.lolNewsListView);
         lolNewsListView.setVisibility(View.VISIBLE);
+        newsMenu = true;
+        scheduleMenu = false;
+        teamMenu = false;
+        playerMenu = false;
+    }
+
+    public void openLoLScheduleMenu(View view)
+    {
+        ViewGroup textLists = (ViewGroup) findViewById(R.id.textContentLayout);
+        ListView lsv;
+
+        for(int i=0; i < textLists.getChildCount(); i++) {
+            View childView = textLists.getChildAt(i);
+            int resID = childView.getId();
+            lsv = (ListView) findViewById(resID);
+
+            lsv.setVisibility(View.GONE);
+        }
+
+        ListView LoLScheduleListView = (ListView) findViewById(R.id.lolScheduleListView);
+        LoLScheduleListView.setVisibility(View.VISIBLE);
+        newsMenu = false;
+        scheduleMenu = true;
+        teamMenu = false;
+        playerMenu = false;
     }
 
     @SuppressLint("InlinedApi")
@@ -278,6 +336,15 @@ public class HomeScreenActivity extends AppCompatActivity {
         mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
     }
 
+
+    public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+        if(scheduleMenu) {
+            Intent intent = new Intent(this, gameNotification.class);
+            startActivity(intent);
+        }else if (newsMenu) {
+            // do news menu activity here
+        }
+    }
     public void openLoLScheduler(View view){
         Intent intent = new Intent(this,lolScheduler.class);
         startActivity(intent);
