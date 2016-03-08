@@ -12,6 +12,8 @@
     <string name="hsScheduler_page_tilte">Hearthstone Game Schedule </string>
     <string name="hotsScheduler_page_tilte">Hero Of The Storm Game Schedule</string>
     <string name="game_notification_page_title">Notification Settings</string>
+    <string name="search_results_page">Search</string>
+    <string name="team_view_title">Team View</string>
     <string-array name="lolSchedule">
         <item>2:00 PM TSM vs Team Impulse</item>
         <item>3:00 PM Immortals vs NRG Esports</item>
@@ -32,5 +34,6 @@
         <item>3:00 PM Team Rave vs Team Hero</item>
         <item>4:00 PM Young Boss vs Team Redemption</item>
     </string-array>
+    <string name="title_activity_team_view">TeamView</string>
 
 </resources>

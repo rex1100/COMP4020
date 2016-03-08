@@ -22,27 +22,34 @@
         <activity
             android:name="test.eSportsApp.Settings"
             android:label="@string/title_activity_settings"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="test.eSportsApp.lolScheduler"
             android:label="@string/lolScheduler_page_tilte"
-
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="test.eSportsApp.Dota2Scheduler"
             android:label="@string/dotaScheduler_page_tilte"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="test.eSportsApp.HsScheduler"
             android:label="@string/hsScheduler_page_tilte"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="test.eSportsApp.HotsScheduler"
             android:label="@string/hotsScheduler_page_tilte"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="test.eSportsApp.gameNotification"
             android:label="@string/game_notification_page_title"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="test.eSportsApp.Search"
+            android:label="@string/search_results_page"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="test.eSportsApp.TeamView"
+            android:label="@string/team_view_title"
             android:theme="@style/AppTheme"></activity>
     </application>
 
