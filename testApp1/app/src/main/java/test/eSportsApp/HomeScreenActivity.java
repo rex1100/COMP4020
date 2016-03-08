@@ -339,8 +339,11 @@ public class HomeScreenActivity extends AppCompatActivity implements AdapterView
 
     public void onItemClick(AdapterView<?> l, View v, int position, long id) {
         if(scheduleMenu) {
+            String data=(String)l.getItemAtPosition(position);
+            data = data.substring(8);
             Intent intent = new Intent(this, gameNotification.class);
             startActivity(intent);
+            intent.putExtra("teams", data);
         }else if (newsMenu) {
             // do news menu activity here
         }

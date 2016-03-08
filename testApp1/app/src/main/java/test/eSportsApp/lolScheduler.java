@@ -16,9 +16,12 @@ import test.testapp1.R;
  * Created by Yang on 16-03-06.
  */
 public class lolScheduler extends AppCompatActivity implements AdapterView.OnItemClickListener {
-
+    String teams;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Intent intent = getIntent();
+        teams = intent.getStringExtra("teams");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lolschedule);
         ListView listview = (ListView) findViewById(R.id.lolSchedule_list);
