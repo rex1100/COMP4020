@@ -65,7 +65,7 @@
         <Switch
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:text="eSports"
+            android:text="Schedule"
             android:id="@+id/LoLswitch2"
             android:layout_weight="0.08"
             android:visibility="gone"

@@ -18,7 +18,7 @@ public class gameNotification extends AppCompatActivity {
     public void saveNotification(View view)
     {
         // do the saving here
-        Intent intent = new Intent(this, matchDetails.class);
+        Intent intent = new Intent(this, HomeScreenActivity.class);
         startActivity(intent);
     }
 }

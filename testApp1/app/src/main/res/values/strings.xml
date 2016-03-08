@@ -14,6 +14,8 @@
     <string name="game_notification_page_title">Notification Settings</string>
     <string name="search_results_page">Search</string>
     <string name="team_view_title">Team View</string>
+    <string name="match_details_title">Match Details</string>
+    <string name="player_details_title">Player Details</string>
     <string-array name="lolSchedule">
         <item>2:00 PM TSM vs Team Impulse</item>
         <item>3:00 PM Immortals vs NRG Esports</item>

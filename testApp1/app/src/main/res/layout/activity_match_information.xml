@@ -150,7 +150,7 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="190dp"
+            android:layout_height="121dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="The featured match of the day, the newcomers Immortals takes on long time LCS favourtie TSM. TSM the 4th placed team this split comes into this game hopeful against the top ranked team in NA LCS, Immortals..."
             android:id="@+id/textView22"
@@ -159,5 +159,6 @@
             android:layout_columnSpan="2" />
 
     </GridLayout>
+
 
 </LinearLayout>
