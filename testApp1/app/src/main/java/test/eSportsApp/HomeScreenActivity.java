@@ -102,7 +102,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         ArrayAdapter<String> lolNewsListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolNewsList);
         lolNewsListView.setAdapter(lolNewsListAdapter);
 
-
         ListView lolScheduleListView = (ListView) findViewById(R.id.lolScheduleListView);
 
         List<String> lolScheduleList = new ArrayList<String>();
@@ -110,6 +109,14 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ArrayAdapter<String> lolScheduleListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolScheduleList);
         lolScheduleListView.setAdapter(lolScheduleListAdapter);
+
+        ListView lolPlayerListView = (ListView) findViewById(R.id.lolPlayerListView);
+
+        List<String> lolPlayerList = new ArrayList<String>();
+        lolPlayerList.addAll(Arrays.asList(StoredArrays.lolPlayerArray));
+
+        ArrayAdapter<String> lolPlayerListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolPlayerList);
+        lolPlayerListView.setAdapter(lolPlayerListAdapter);
 
 
         ListView lolTeamListView = (ListView) findViewById(R.id.lolTeamListView);
@@ -120,6 +127,17 @@ public class HomeScreenActivity extends AppCompatActivity {
         ArrayAdapter<String> lolTeamListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolTeamList);
         lolTeamListView.setAdapter(lolTeamListAdapter);
 
+        lolPlayerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String player = "Doublelift";//adapter.getItemAtPosition(position).toString();
+
+                Intent intent = new Intent(HomeScreenActivity.this, playerView.class);
+                intent.putExtra("player", player);
+
+                startActivity(intent);
+            }
+        });
         lolTeamListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
@@ -363,6 +381,23 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ListView lolNewsTeamView = (ListView) findViewById(R.id.lolTeamListView);
         lolNewsTeamView.setVisibility(View.VISIBLE);
+    }
+
+    public void openLoLPlayerMenu(View view)
+    {
+        ViewGroup textLists = (ViewGroup) findViewById(R.id.textContentLayout);
+        ListView lsv;
+
+        for(int i=0; i < textLists.getChildCount(); i++) {
+            View childView = textLists.getChildAt(i);
+            int resID = childView.getId();
+            lsv = (ListView) findViewById(resID);
+
+            lsv.setVisibility(View.GONE);
+        }
+
+        ListView lolPlayerListView = (ListView) findViewById(R.id.lolPlayerListView);
+        lolPlayerListView.setVisibility(View.VISIBLE);
     }
 
     public void openSearch(View view)
