@@ -11,12 +11,17 @@
         android:layout_gravity="center_horizontal"
         android:allowUndo="true"
         android:background="#f02525"
-        android:layout_weight="0.07" />
+        android:layout_weight="0.41" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Now Search"
         android:id="@+id/searchButton" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="391dp"
+        android:id="@+id/listView" />
 
 </LinearLayout>
