@@ -29,17 +29,7 @@ import test.eSportsApp.StoredArrays;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class HomeScreenActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-
-    // a couple of booleans to determine where we are in the interface for list on click listener
-    boolean lolMenu = true;
-    boolean hearthstoneMenu = false;
-    boolean dotaMenu = false;
-    boolean hotsMenu = false;
-    boolean newsMenu = false;
-    boolean scheduleMenu = false;
-    boolean teamMenu = false;
-    boolean playerMenu = false;
+public class HomeScreenActivity extends AppCompatActivity {
 
     /**
      * Whether or not the system UI should be auto-hidden after
@@ -112,6 +102,16 @@ public class HomeScreenActivity extends AppCompatActivity implements AdapterView
         ArrayAdapter<String> lolNewsListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolNewsList);
         lolNewsListView.setAdapter(lolNewsListAdapter);
 
+
+        ListView lolScheduleListView = (ListView) findViewById(R.id.lolScheduleListView);
+
+        List<String> lolScheduleList = new ArrayList<String>();
+        lolScheduleList.addAll(Arrays.asList(StoredArrays.lolScheduleArray));
+
+        ArrayAdapter<String> lolScheduleListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolScheduleList);
+        lolScheduleListView.setAdapter(lolScheduleListAdapter);
+
+
         ListView lolTeamListView = (ListView) findViewById(R.id.lolTeamListView);
 
         List<String> lolTeamList = new ArrayList<String>();
@@ -126,12 +126,23 @@ public class HomeScreenActivity extends AppCompatActivity implements AdapterView
                 String team = adapter.getItemAtPosition(position).toString();
 
                 Intent teamIntent = new Intent(HomeScreenActivity.this, TeamView.class);
-                teamIntent.putExtra("KEY",team);
+                teamIntent.putExtra("KEY", team);
 
                 startActivity(teamIntent);
 
             }
         });
+        lolScheduleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String data = adapter.getItemAtPosition(position).toString();
+                data = data.substring(8);
+                Intent intent = new Intent(HomeScreenActivity.this, matchDetails.class);
+                startActivity(intent);
+                intent.putExtra("teams", data);
+            }
+        });
+
         String isEnabled;
         Intent intent=getIntent();
 
@@ -318,6 +329,23 @@ public class HomeScreenActivity extends AppCompatActivity implements AdapterView
 
         ListView lolNewsListView = (ListView) findViewById(R.id.lolNewsListView);
         lolNewsListView.setVisibility(View.VISIBLE);
+    }
+
+    public void openLoLScheduleMenu(View view)
+    {
+        ViewGroup textLists = (ViewGroup) findViewById(R.id.textContentLayout);
+        ListView lsv;
+
+        for(int i=0; i < textLists.getChildCount(); i++) {
+            View childView = textLists.getChildAt(i);
+            int resID = childView.getId();
+            lsv = (ListView) findViewById(resID);
+
+            lsv.setVisibility(View.GONE);
+        }
+
+        ListView LoLScheduleListView = (ListView) findViewById(R.id.lolScheduleListView);
+        LoLScheduleListView.setVisibility(View.VISIBLE);
     }
 
     public void openLoLTeamMenu(View view)

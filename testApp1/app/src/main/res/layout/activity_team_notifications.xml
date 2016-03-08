@@ -3,19 +3,31 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <CheckBox
-        android:layout_width="295dp"
+        android:layout_width="195dp"
         android:layout_height="181dp"
-        android:text="I would like a notification ___ minutes before each game this team plays"
+        android:text="I would like a notification minutes before every game this team plays"
         android:id="@+id/checkBox"
         android:layout_row="0"
         android:layout_column="0"
         android:checked="false" />
 
-    <NumberPicker
+    <EditText
+        android:layout_width="37dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:text=" 0" />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_row="0"
-        android:layout_column="1" />
+        android:text="Save"
+        android:id="@+id/button5"
+        android:layout_row="1"
+        android:layout_column="8"
+        android:onClick="saveNotification" />
 
 </GridLayout>

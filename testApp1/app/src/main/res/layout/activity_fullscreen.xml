@@ -112,6 +112,7 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="center_horizontal"
             android:id="@+id/lolbutton2"
+            android:onClick="openLoLScheduleMenu"
             android:visibility="gone" />
 
         <Button
@@ -195,6 +196,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/lolTeamListView"
+            android:choiceMode="singleChoice"
+            android:clickable="false"
+            android:visibility="gone" />
+        <ListView
+            tools:listitem="@android:layout/simple_list_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/lolScheduleListView"
             android:choiceMode="singleChoice"
             android:clickable="false"
             android:visibility="gone" />

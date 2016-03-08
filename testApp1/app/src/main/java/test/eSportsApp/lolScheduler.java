@@ -37,7 +37,5 @@ public class lolScheduler extends AppCompatActivity implements AdapterView.OnIte
     {
         Intent intent = new Intent(this, HomeScreenActivity.class);
         startActivity(intent);
-
-
     }
 }
