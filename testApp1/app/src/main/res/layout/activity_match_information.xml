@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="TSM vs. IMT"
+        android:gravity="center"
+        android:id="@+id/matchTitle" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Up Match Notification"
+        android:id="@+id/button2"
+        android:onClick="goToNotificaions"
+        android:layout_gravity="right" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.03">
+
+        <TextView
+            android:layout_width="184dp"
+            android:layout_height="78dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/team1"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:gravity="center"
+            android:clickable="true"
+            android:onClick="goToTeam"
+            android:text="TSM" />
+
+        <TextView
+            android:layout_width="198dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textView12"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:onClick="goToTeam"
+            android:text="IMT" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Top: Hauntzer"
+            android:id="@+id/textView10"
+            android:layout_row="1"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Top: Huni"
+            android:id="@+id/textView16"
+            android:layout_row="1"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Jungle: Svenskeren"
+            android:id="@+id/textView11"
+            android:layout_row="2"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Jungle: Reignover"
+            android:id="@+id/textView17"
+            android:layout_row="2"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mid: Bjersen"
+            android:id="@+id/textView13"
+            android:layout_row="3"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mid: Pobelter"
+            android:id="@+id/textView18"
+            android:layout_row="3"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ADC: Doublelift"
+            android:id="@+id/textView14"
+            android:layout_row="4"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ADC: Wildturtle"
+            android:id="@+id/textView19"
+            android:layout_row="4"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Support: Yellowstar"
+            android:id="@+id/textView15"
+            android:layout_row="5"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Support: Adrian"
+            android:id="@+id/textView20"
+            android:layout_row="5"
+            android:layout_column="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Match Details"
+            android:id="@+id/textView21"
+            android:layout_row="6"
+            android:layout_column="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="The featured match of the day, the newcomers Immortals takes on long time LCS favourtie TSM. TSM the 4th placed team this split comes into this game hopeful against the top ranked team in NA LCS, Immortals..."
+            android:id="@+id/textView22"
+            android:layout_row="7"
+            android:layout_column="0"
+            android:layout_columnSpan="2" />
+
+    </GridLayout>
+
+</LinearLayout>
