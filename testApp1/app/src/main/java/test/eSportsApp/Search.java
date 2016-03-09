@@ -47,9 +47,15 @@ public class Search extends AppCompatActivity{
         return false;
     }
 
-    public void onClick(View v){
-        listView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getData()));
-        setContentView(listView);
+    public void onSearchClick(View v){
+
+        String[] searchResults = {"League of Legends (Game)", "Patch 6.4 Update", "TSM", "CLG vs. QG Game 3 (Live)"};
+
+        ListView onSearchView = (ListView) findViewById(R.id.listSearchView);
+
+        ArrayAdapter<String> onSearchAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, searchResults);
+
+        onSearchView.setAdapter(onSearchAdapter);
     }
 
     private List<String> getData(){

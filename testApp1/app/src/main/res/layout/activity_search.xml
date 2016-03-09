@@ -8,20 +8,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
-        android:layout_gravity="center_horizontal"
         android:allowUndo="true"
         android:background="#f02525"
-        android:layout_weight="0.41" />
+        android:gravity="center" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Now Search"
-        android:id="@+id/searchButton" />
+        android:text="Search"
+        android:id="@+id/searchButton"
+        android:onClick="onSearchClick"
+        android:layout_gravity="center_horizontal" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="391dp"
-        android:id="@+id/listView" />
+        android:id="@+id/listSearchView" />
 
 </LinearLayout>
