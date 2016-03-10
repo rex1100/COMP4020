@@ -3,7 +3,5 @@
     <string-array name="games_array">
         <item>League of Legends</item>
         <item>Hearthstone</item>
-        <item>Dota 2</item>
-        <item>Heroes of the Storm</item>
     </string-array>
 </resources>

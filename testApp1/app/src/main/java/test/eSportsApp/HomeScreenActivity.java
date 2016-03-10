@@ -87,8 +87,6 @@ public class HomeScreenActivity extends AppCompatActivity {
      */
 
 
-    int[] onSubMenus = new int[7];
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -180,112 +178,11 @@ public class HomeScreenActivity extends AppCompatActivity {
             }
         });
 
-        String isEnabled;
-        Intent intent=getIntent();
-
-        isEnabled = intent.getStringExtra("lolButton1");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[0] = 0;
-        }
-        else{
-            onSubMenus[0] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("lolButton2");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[1] = 0;
-        }
-        else{
-            onSubMenus[1] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("lolButton3");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[2] = 0;
-        }
-        else{
-            onSubMenus[2] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("lolButton4");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[3] = 0;
-        }
-        else{
-            onSubMenus[3] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton1");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[4] = 0;
-        }
-        else{
-            onSubMenus[4] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton2");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[5] = 0;
-        }
-        else{
-            onSubMenus[5] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton3");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSubMenus[6] = 0;
-        }
-        else{
-            onSubMenus[6] = 1;
-        }
     }
 
     public void openSettings(View view)
     {
         Intent intent = new Intent(this, Settings.class);
-        if(onSubMenus[0] == 0)
-        {
-            intent.putExtra("lolButton1", "disabled");
-        } else {
-            intent.putExtra("lolButton1", "enabled");
-        }
-        if(onSubMenus[1] == 0)
-        {
-            intent.putExtra("lolButton2", "disabled");
-        } else {
-            intent.putExtra("lolButton2", "enabled");
-        }
-        if(onSubMenus[2] == 0)
-        {
-            intent.putExtra("lolButton3", "disabled");
-        } else {
-            intent.putExtra("lolButton3", "enabled");
-        }
-        if(onSubMenus[3] == 0)
-        {
-            intent.putExtra("lolButton4", "disabled");
-        } else {
-            intent.putExtra("lolButton4", "enabled");
-        }
-        if(onSubMenus[4] == 0)
-        {
-            intent.putExtra("hsButton1", "disabled");
-        } else {
-            intent.putExtra("hsButton1", "enabled");
-        }
-        if(onSubMenus[5] == 0)
-        {
-            intent.putExtra("hsButton2", "disabled");
-        } else {
-            intent.putExtra("hsButton2", "enabled");
-        }
-        if(onSubMenus[6] == 0)
-        {
-            intent.putExtra("hsButton3", "disabled");
-        } else {
-            intent.putExtra("hsButton3", "enabled");
-        }
-
         startActivity(intent);
     }
 
@@ -311,7 +208,7 @@ public class HomeScreenActivity extends AppCompatActivity {
             int resID = childView.getId();
             buttonSwitch = (Button) findViewById(resID);
 
-            if(i < 4 && onSubMenus[i] == 1)
+            if(i < 4 && StoredArrays.onSubMenus[i] == 1)
             {
                 buttonSwitch.setVisibility(View.VISIBLE);
             } else {
@@ -342,7 +239,7 @@ public class HomeScreenActivity extends AppCompatActivity {
             int resID = childView.getId();
             buttonSwitch = (Button) findViewById(resID);
 
-            if(i > 3 && onSubMenus[i] == 1)
+            if(i > 3 && StoredArrays.onSubMenus[i] == 1)
             {
                 buttonSwitch.setVisibility(View.VISIBLE);
             } else {

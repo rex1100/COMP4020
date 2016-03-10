@@ -16,7 +16,6 @@ import test.testapp1.R;
  */
 public class Search extends AppCompatActivity{
 
-    private List<String> data = new ArrayList<String>();
     private Button searchButton;
     private ListView listView;
 
@@ -25,27 +24,23 @@ public class Search extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        data.add("Dota");
-        data.add("Dota2");
-        data.add("HOTs");
-        data.add("LOL");
-        data.add("Hs");
-        data.add("COD");
+        ListView onSearchView = (ListView) findViewById(R.id.listSearchView);
+
         listView = new ListView(this);
         searchButton = (Button) findViewById(R.id.searchButton);
-        //searchButton.setOnClickListener(this);
-        //searchButton.setOnTouchListener(this);
-        //listView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getData()));
-        //setContentView(listView);
+
+        onSearchView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String data = adapter.getItemAtPosition(position).toString();
+                data = data.substring(8);
+                Intent intent = new Intent(Search.this, matchDetails.class);
+                startActivity(intent);
+                intent.putExtra("teams", data);
+            }
+        });
     }
 
-    public boolean onTouch(View v,MotionEvent event){
-        if(event.getAction()== MotionEvent.ACTION_UP){
-            listView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1,getData()));
-            setContentView(listView);
-        }
-        return false;
-    }
 
     public void onSearchClick(View v){
 
@@ -56,18 +51,15 @@ public class Search extends AppCompatActivity{
         ArrayAdapter<String> onSearchAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, searchResults);
 
         onSearchView.setAdapter(onSearchAdapter);
+
     }
 
-    private List<String> getData(){
-        return data;
-    }
 
 
     public void backHome(View view)
     {
         Intent intent = new Intent(this, HomeScreenActivity.class);
         startActivity(intent);
-
     }
 
 }

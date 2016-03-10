@@ -34,4 +34,10 @@ public class matchDetails  extends AppCompatActivity {
         teamIntent.putExtra("KEY", "TSM");
         startActivity(teamIntent);
     }
+
+    public void backHome(View view)
+    {
+        Intent intent = new Intent(this, HomeScreenActivity.class);
+        startActivity(intent);
+    }
 }

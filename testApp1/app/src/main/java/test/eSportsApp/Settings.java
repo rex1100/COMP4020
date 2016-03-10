@@ -29,7 +29,6 @@ import test.testapp1.R;
 
 public class Settings extends AppCompatActivity {
 
-    int[] onSwitches = new int[7];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,68 +40,14 @@ public class Settings extends AppCompatActivity {
         Intent intent=getIntent();
         ViewGroup switches = (ViewGroup) findViewById(R.id.settingsSwitchLayout);
 
-        isEnabled = intent.getStringExtra("lolButton1");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[0] = 0;
-        }
-        else{
-            onSwitches[0] = 1;
-        }
 
-        isEnabled = intent.getStringExtra("lolButton2");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[1] = 0;
-        }
-        else{
-            onSwitches[1] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("lolButton3");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[2] = 0;
-        }
-        else{
-            onSwitches[2] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("lolButton4");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[3] = 0;
-        }
-        else{
-            onSwitches[3] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton1");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[4] = 0;
-        }
-        else{
-            onSwitches[4] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton2");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[5] = 0;
-        }
-        else{
-            onSwitches[5] = 1;
-        }
-
-        isEnabled = intent.getStringExtra("hsButton3");
-        if(isEnabled==null||isEnabled.equals("disabled")){
-            onSwitches[6] = 0;
-        }
-        else{
-            onSwitches[6] = 1;
-        }
 
         for(int i = 0; i < 7; i++) {
             View childView = switches.getChildAt(i);
             int resID = childView.getId();
             onSwitch = (Switch) findViewById(resID);
 
-            if (onSwitches[i] == 0) {
+            if (StoredArrays.onSubMenus[i] == 0) {
                 onSwitch.setChecked(false);
             } else {
                 onSwitch.setChecked(true);
@@ -119,12 +64,6 @@ public class Settings extends AppCompatActivity {
 
         Switch lolSwitch2 = (Switch)findViewById(R.id.LoLswitch2);
         lolSwitch2.setVisibility(View.VISIBLE);
-
-        Switch lolSwitch3 = (Switch)findViewById(R.id.LoLswitch3);
-        lolSwitch3.setVisibility(View.VISIBLE);
-
-        Switch lolSwitch4 = (Switch)findViewById(R.id.LoLswitch4);
-        lolSwitch4.setVisibility(View.VISIBLE);
 
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -188,68 +127,68 @@ public class Settings extends AppCompatActivity {
         if(lolSwitch1.isChecked())
         {
             intent.putExtra("lolButton1", "enabled");
-            onSwitches[0]=1;
+            StoredArrays.onSubMenus[0]=1;
         } else {
             intent.putExtra("lolButton1", "disabled");
-            onSwitches[0]=0;
+            StoredArrays.onSubMenus[0]=0;
         }
 
         Switch lolSwitch2 = (Switch) findViewById(R.id.LoLswitch2);
         if(lolSwitch2.isChecked())
         {
             intent.putExtra("lolButton2", "enabled");
-            onSwitches[1]=1;
+            StoredArrays.onSubMenus[1]=1;
         } else {
             intent.putExtra("lolButton2", "disabled");
-            onSwitches[1]=0;
+            StoredArrays.onSubMenus[1]=0;
         }
         Switch lolSwitch3 = (Switch) findViewById(R.id.LoLswitch3);
         if(lolSwitch3.isChecked())
         {
             intent.putExtra("lolButton3", "enabled");
-            onSwitches[2]=1;
+            StoredArrays.onSubMenus[2]=1;
         } else {
             intent.putExtra("lolButton3", "disabled");
-            onSwitches[2]=0;
+            StoredArrays.onSubMenus[2]=0;
         }
         Switch lolSwitch4 = (Switch) findViewById(R.id.LoLswitch4);
         if(lolSwitch4.isChecked())
         {
             intent.putExtra("lolButton4", "enabled");
-            onSwitches[3]=1;
+            StoredArrays.onSubMenus[3]=1;
         } else {
             intent.putExtra("lolButton4", "disabled");
-            onSwitches[3]=0;
+            StoredArrays.onSubMenus[3]=0;
         }
 
         Switch hsSwitch1 = (Switch) findViewById(R.id.HSswitch1);
         if(hsSwitch1.isChecked())
         {
             intent.putExtra("hsButton1", "enabled");
-            onSwitches[4]=1;
+            StoredArrays.onSubMenus[4]=1;
         } else {
             intent.putExtra("hsButton1", "disabled");
-            onSwitches[4]=0;
+            StoredArrays.onSubMenus[4]=0;
         }
 
         Switch hsSwitch2 = (Switch) findViewById(R.id.HSswitch2);
         if(hsSwitch2.isChecked())
         {
             intent.putExtra("hsButton2", "enabled");
-            onSwitches[5]=1;
+            StoredArrays.onSubMenus[5]=1;
         } else {
             intent.putExtra("hsButton2", "disabled");
-            onSwitches[5]=0;
+            StoredArrays.onSubMenus[5]=0;
         }
 
         Switch hsSwitch3 = (Switch) findViewById(R.id.HSswitch3);
         if(hsSwitch3.isChecked())
         {
             intent.putExtra("hsButton3", "enabled");
-            onSwitches[6]=1;
+            StoredArrays.onSubMenus[6]=1;
         } else {
             intent.putExtra("hsButton3", "disabled");
-            onSwitches[6]=0;
+            StoredArrays.onSubMenus[6]=0;
         }
 
         startActivity(intent);
