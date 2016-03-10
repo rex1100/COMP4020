@@ -118,6 +118,13 @@ public class HomeScreenActivity extends AppCompatActivity {
         ArrayAdapter<String> lolPlayerListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolPlayerList);
         lolPlayerListView.setAdapter(lolPlayerListAdapter);
 
+        ListView hsPlayerListView = (ListView) findViewById(R.id.hsPlayerListView);
+
+        List<String> hsPlayerList = new ArrayList<String>();
+        hsPlayerList.addAll(Arrays.asList(StoredArrays.hsPlayerArray));
+
+        ArrayAdapter<String> hsPlayerListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, hsPlayerList);
+        hsPlayerListView.setAdapter(hsPlayerListAdapter);
 
         ListView lolTeamListView = (ListView) findViewById(R.id.lolTeamListView);
 
@@ -126,6 +133,18 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ArrayAdapter<String> lolTeamListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lolTeamList);
         lolTeamListView.setAdapter(lolTeamListAdapter);
+
+        hsPlayerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long arg) {
+                String player = "Amaz";//adapter.getItemAtPosition(position).toString();
+
+                Intent intent = new Intent(HomeScreenActivity.this, hsPlayerView.class);
+                intent.putExtra("player", player);
+
+                startActivity(intent);
+            }
+        });
 
         lolPlayerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -398,6 +417,23 @@ public class HomeScreenActivity extends AppCompatActivity {
 
         ListView lolPlayerListView = (ListView) findViewById(R.id.lolPlayerListView);
         lolPlayerListView.setVisibility(View.VISIBLE);
+    }
+
+    public void openHsPlayerMenu(View view)
+    {
+        ViewGroup textLists = (ViewGroup) findViewById(R.id.textContentLayout);
+        ListView lsv;
+
+        for(int i=0; i < textLists.getChildCount(); i++) {
+            View childView = textLists.getChildAt(i);
+            int resID = childView.getId();
+            lsv = (ListView) findViewById(resID);
+
+            lsv.setVisibility(View.GONE);
+        }
+
+        ListView hsPlayerListView = (ListView) findViewById(R.id.hsPlayerListView);
+        hsPlayerListView.setVisibility(View.VISIBLE);
     }
 
     public void openSearch(View view)

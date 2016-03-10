@@ -59,6 +59,10 @@
             android:name="test.eSportsApp.playerView"
             android:label="@string/player_details_title"
             android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name="test.eSportsApp.hsPlayerView"
+            android:label="@string/team_view_title"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

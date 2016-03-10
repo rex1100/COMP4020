@@ -170,6 +170,7 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="center_horizontal"
             android:id="@+id/hsbutton3"
+            android:onClick="openHsPlayerMenu"
             android:visibility="gone" />
 
     </LinearLayout>
@@ -197,6 +198,15 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/lolPlayerListView"
+            android:choiceMode="singleChoice"
+            android:clickable="false"
+            android:visibility="gone" />
+
+        <ListView
+            tools:listitem="@android:layout/simple_list_item_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/hsPlayerListView"
             android:choiceMode="singleChoice"
             android:clickable="false"
             android:visibility="gone" />
